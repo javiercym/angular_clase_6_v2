@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
@@ -7,13 +6,13 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { ContactanosComponent } from './pages/contactanos/contactanos.component';
 
 const routes: Routes = [
-  {path:'',
+  {path: '',
     children:[
-      {path:'inicio',component:InicioComponent},
-      {path:'nosotros',component:NosotrosComponent},
-      {path:'servicios',component:ServiciosComponent},
-      {path:'contactanos',component:ContactanosComponent},
-      {path:'**',redirectTo:'inicio'}
+      {path:'inicio',component: InicioComponent},
+      {path:'nosotros',component: NosotrosComponent},
+      {path:'servicios',component: ServiciosComponent},
+      {path:'contactanos',component: ContactanosComponent},
+      {path:'**',redirectTo: 'inicio'}
     ]
   }
 ];
@@ -21,9 +20,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 export class ModulosRoutingModule { }
